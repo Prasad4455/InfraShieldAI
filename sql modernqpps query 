@@ -1,0 +1,11 @@
+SELECT
+    sys.Netbios_Name0 AS [Computer Name],
+    app.Name0 AS [Application Name],
+    app.Version0 AS [Version],
+    app.Publisher0 AS [Publisher]
+FROM 
+    v_GS_INSTALLED_MODERN_APP app
+INNER JOIN
+    v_R_System sys ON app.ResourceID = sys.ResourceID
+ORDER BY 
+    sys.Netbios_Name0, app.Name0
